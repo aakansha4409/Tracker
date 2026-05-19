@@ -1,0 +1,6 @@
+{
+  "appId": "com.example.tracker",
+  "appName": "Tracker",
+  "webDir": "dist",
+  "bundledWebRuntime": false
+}

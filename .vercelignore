@@ -1,0 +1,10 @@
+node_modules
+dist
+.vercel
+.git
+*.log
+*.local
+coverage
+src/**
+*.ts
+*.tsx

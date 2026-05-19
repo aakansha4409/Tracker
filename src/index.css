@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-cream text-brown-dark font-sans antialiased selection:bg-pink-dusty selection:text-brown-dark transition-colors duration-300;
+    background-image: radial-gradient(circle at 100% 0%, #F9EAE8 0%, transparent 25%),
+                      radial-gradient(circle at 0% 100%, #F4EDE4 0%, transparent 25%);
+    background-attachment: fixed;
+  }
+
+  /* Consistent heading typography across ALL pages */
+  h1, h2, h3 {
+    @apply font-serif;
+  }
+
+  /* Inputs + selects inherit body font */
+  input, select, textarea, button {
+    @apply font-sans;
+  }
+}
+
+@layer utilities {
+  .glass-card {
+    @apply bg-white/60 backdrop-blur-xl border border-white/80 shadow-soft rounded-3xl transition-all duration-300;
+  }
+
+  .sticky-note {
+    @apply shadow-md p-5 rounded-md font-serif italic text-brown-dark relative transition-transform hover:scale-105 cursor-pointer;
+  }
+  .sticky-note::before {
+    content: '';
+    @apply absolute top-[-6px] left-1/2 -translate-x-1/2 w-10 h-3 bg-white/40 backdrop-blur-md rounded-sm shadow-sm;
+  }
+
+  /* Aesthetic label style used across cards */
+  .label-muted {
+    @apply text-[10px] uppercase tracking-widest text-brown-muted font-sans font-medium;
+  }
+
+  /* Page heading style */
+  .page-title {
+    @apply text-2xl font-serif font-medium text-brown-dark tracking-wide;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-beige-dark rounded-full;
+}
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-pink-dusty;
+}
+
+/* Range input styling */
+input[type="range"] {
+  @apply h-1.5 rounded-full appearance-none bg-beige-dark;
+}
+input[type="range"]::-webkit-slider-thumb {
+  @apply appearance-none w-4 h-4 rounded-full bg-brown-muted cursor-pointer border-2 border-white shadow-sm;
+}
+input[type="range"]::-webkit-slider-thumb:hover {
+  @apply bg-pink-dark;
+}
+
+/* Date input styling */
+input[type="date"] {
+  color-scheme: light;
+}
